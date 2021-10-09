@@ -22,14 +22,24 @@ public:
 	};
 	Array(Array const &other)
 	{
-		_arr = other._arr;
+		_arr = new T[other._len];
+		for (unsigned int i = 0; i < other._len; ++i)
+			_arr[i] = other._arr[i];
 		_len = other._len;
+	}
+	~Array()
+	{
+		std::cout << "dest called\n";
+		delete[] _arr;
 	}
 	Array &operator=(const Array &other)
 	{
 		if (this == &other)
 			return (*this);
-		_arr = other._arr;
+		delete[] _arr;
+		_arr = new T[other._len];
+		for (unsigned int i = 0; i < _len; ++i)
+			_arr[i] = other._arr[i];
 		_len = other._len;
 		return (*this);
 	}
