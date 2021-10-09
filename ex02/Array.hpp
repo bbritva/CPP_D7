@@ -29,7 +29,6 @@ public:
 	}
 	~Array()
 	{
-		std::cout << "dest called\n";
 		delete[] _arr;
 	}
 	Array &operator=(const Array &other)
