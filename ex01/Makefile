@@ -25,7 +25,7 @@ fclean:		clean
 
 re:			fclean all
 
-%.o:		%.cpp
+%.o:		%.cpp iter.hpp
 			$(CPP) -c $< -o $@
 			echo $@ compilled
 
