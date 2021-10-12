@@ -3,10 +3,11 @@
 
 # include <iostream>
 
-template <typename T, typename F> void iter(T arr, int len, F func)
+template <typename T>
+void iter(T *arr, int len, void (*func)(T const&))
 {
 	int i = -1;
-	while (++i < len)
+	while (arr && (++i < len))
 		func(arr[i]);
 }
 
