@@ -33,7 +33,7 @@ int main(int, char**)
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << e.what() << ": wrong index\n";
     }
     try
     {
@@ -41,7 +41,7 @@ int main(int, char**)
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+    	std::cerr << e.what() << ": wrong index\n";
     }
 
     for (int i = 0; i < MAX_VAL; i++)
